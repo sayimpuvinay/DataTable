@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import About from './About/About';
 import Home from './Home/Home';
@@ -8,18 +8,16 @@ import Table from './Table/Table';
 import NavBar from './NavBar/Navbar';
 
 function App() {
- 
   return (
     <div>
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Settings" element={<Settings />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Table" element={<Table />} />
-        </Routes>
-      </Router>
+      <NavBar />
+      <Routes>
+        <Route path="" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/Settings" element={<Settings />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Table" element={<Table />} />
+      </Routes>
     </div>
   );
 }
