@@ -5,6 +5,7 @@ import './App.css';
 import About from './About';
 import Home from './Home';
 import Settings from './Settings';
+import Table from './Table';
 
 function App() {
   const [data, setData] = useState(null);
