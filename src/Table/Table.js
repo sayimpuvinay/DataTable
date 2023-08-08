@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './App.css';
+import './Table.css';
 
 
 function Table() {
@@ -45,13 +45,21 @@ function Table() {
 
   const renderTable = () => {
     if (!data) {
-      return <div>Loading...</div>;
+      return (
+    <div className="d-flex align-items-center justify-content-center vh-100">
+      <div className="text-center">Loading...</div>
+    </div>
+    );
     }
 
     const { column_names, data: tableData } = data;
 
     if (!tableData || tableData.length === 0) {
-      return <div>No data available.</div>;
+      return (
+    <div className="d-flex align-items-center justify-content-center vh-100">
+      <div className="text-center">No Data Available</div>
+    </div>
+    );
     }
 
     return (
@@ -77,11 +85,12 @@ function Table() {
   };
 
   return (
-    <div>
-      {error && <div className="error">Error: {error.message}</div>}
+    <div className="d-flex align-items-center justify-content-center m-auto">
+      {error && <div className="error text-center">Error: {error.message}</div>}
       {renderTable()}
     </div>
   );
 }
 
 export default Table;
+
